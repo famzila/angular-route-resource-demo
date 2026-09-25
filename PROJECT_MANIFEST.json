@@ -8,6 +8,7 @@
   "routing": true,
   "rxjsLinting": "auto",
   "budgetProfile": "balanced",
+  "lintersConfigured": true,
   "skillVersions": {
     "angular-setup-project": "1.0",
     "angular-linters": "1.0",

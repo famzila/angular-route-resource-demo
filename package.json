@@ -6,7 +6,30 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "lint": "ng lint",
+    "lint:fix": "ng lint --fix",
+    "lint:styles": "stylelint \"src/**/*.css\"",
+    "lint:styles:fix": "stylelint \"src/**/*.css\" --fix",
+    "format": "prettier --check \"src/**/*.{ts,html,css,json,md}\"",
+    "format:fix": "prettier --write \"src/**/*.{ts,html,css,json,md}\"",
+    "prepare": "husky"
+  },
+  "lint-staged": {
+    "*.ts": [
+      "eslint --fix"
+    ],
+    "*.html": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.css": [
+      "stylelint --fix",
+      "prettier --write"
+    ],
+    "*.{json,md}": [
+      "prettier --write"
+    ]
   },
   "private": true,
   "packageManager": "pnpm@10.14.0",
@@ -21,12 +44,31 @@
     "tslib": "^2.3.0"
   },
   "devDependencies": {
+    "@angular-eslint/builder": "22.5.0",
     "@angular/build": "^22.2.0",
     "@angular/cli": "^22.2.0",
     "@angular/compiler-cli": "^22.2.0",
+    "@commitlint/cli": "^21.2.3",
+    "@commitlint/config-conventional": "^21.2.3",
+    "@eslint/js": "^10.0.1",
+    "@typescript-eslint/parser": "^8.70.1",
+    "angular-eslint": "22.5.0",
+    "eslint": "^10.9.1",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-import-resolver-typescript": "^4.4.5",
+    "eslint-plugin-import-x": "^4.17.1",
+    "eslint-plugin-prettier": "^5.5.6",
+    "eslint-plugin-rxjs-x": "^1.0.6",
+    "eslint-plugin-unused-imports": "^4.4.1",
+    "globals": "^17.12.0",
+    "husky": "^9.1.7",
     "jsdom": "^30.0.0",
+    "lint-staged": "^17.5.1",
     "prettier": "^3.8.1",
+    "stylelint": "^17.15.0",
+    "stylelint-config-standard": "^40.0.0",
     "typescript": "~6.0.2",
+    "typescript-eslint": "8.69.0",
     "vitest": "^5.0.0"
   }
 }
