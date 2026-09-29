@@ -69,12 +69,7 @@ module.exports = defineConfig([
         'error',
         {
           groups: ['builtin', 'external', 'internal', ['parent', 'sibling'], 'index', 'type'],
-          pathGroups: [
-            { pattern: '@angular/**', group: 'external', position: 'before' },
-            { pattern: '@core/**', group: 'internal' },
-            { pattern: '@shared/**', group: 'internal' },
-            { pattern: '@features/**', group: 'internal' },
-          ],
+          pathGroups: [{ pattern: '@angular/**', group: 'external', position: 'before' }],
           alphabetize: { order: 'asc', caseInsensitive: true },
           'newlines-between': 'always',
         },
